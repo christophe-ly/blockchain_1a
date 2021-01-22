@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/projetblockchain.dir/main.c.o CMakeFiles/projetblockchain.dir/blockchain.c.o  -o projetblockchain /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

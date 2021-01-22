@@ -1,0 +1,74 @@
+PROJET C - ALGORITHMIQUE ET PROGRAMMATION II
+LY CHRISTOPHE
+LI JOEY
+
+-----------------------------------------------------
+
+REQUIREMENTS
+
+Requires OpenSSL, compile flag: -lssl -lcrypto
+
+-----------------------------------------------------
+
+I - Utilité des fichiers
+	
+	- main.c : fichier principal d'execution du projet.
+	- blockchain.h : fichier header contenant les librairies importées, 
+	les déclarations de structures et de fonctions.
+	- blockchain.c : fichier C contenant les différentes fonctions du 
+	projet.
+	- makefile : permet de générer le fichier executable
+		-> make : pour créer l'exécutable
+		-> make clean : pour supprimer les fichiers intermédiaires .o
+		-> make mrproper : pour supprimer les fichiers .o et l'exécutable
+
+-----------------------------------------------------
+
+II - Librairies utilisées
+	- Openssl pour la fonction de hashage SHA-256.
+	- Time pour le calcul de la date d'un bloc.
+
+-----------------------------------------------------
+
+III - Méthode d'utilisation du projet
+
+On dispose de l'interface suivante :
+	- menuLogin() est un menu permettant de démarrer la blockchain.
+	2 options sont proposées, la saisie du numéro correspondant permet 
+	d'accéder aux fonctionnalités associées.
+	Il faut s'identifier en saisissant un pseudonyme ou nom	d'utilisateur 
+	sans espace.
+	De plus, quitter ce menu efface les données stockées dans la blockchain.
+
+	- Se connecter donne accès au menu principal de la blockchain :
+	menuBlockchain().
+	6 options sont proposées :
+	
+	1) Effectuer un échange (en saisissant les informations de l'échange)
+
+	2) Parcourir la blockchain
+	L'affichage des blocs se fait de manière individuelle, une option
+	permettant de passer au bloc suivant est proposée.
+
+	3) Accéder à un bloc à partir de sa position.
+
+	4) Voir les échanges reçus.
+	Permet à l'utilisateur de voir les échanges où il est inscrit comme
+	destinataire. Même affichage que l'option 2.
+
+	5) Modifier un échange émis.
+	Permet à l'utilisateur de voir les échanges qu'il a effectué et de
+	modifier leurs informations. Les hash affectés sont recalculé après
+	modification.
+
+	6) Se déconnecter
+	Revient au menuLogin().
+
+Pour simuler un Peer to Peer, il faut se connecter avec un premier utilisateur
+effectuer un échange avec ce dernier.
+Puis, se déconnecter pour revenir au menu Login et se reconnecter avec un autre 
+nom d'utilisateur. On peut observer que le bloc créé par le premier utlisateur 
+est visible par le deuxième.
+Chaque utilisateur peut interargir avec la blockchain, son fonctionnement est
+donc décentralisé.
+
